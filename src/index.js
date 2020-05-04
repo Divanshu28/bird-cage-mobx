@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {Provider} from 'mobx-react';
+import BirdStore from './stores/BirdsStore';
+
+const Root = (
+  <Provider BirdStore={BirdStore}>
+    <App/>
+  </Provider>
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ Root,
   document.getElementById('root')
 );
 
